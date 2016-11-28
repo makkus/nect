@@ -1,0 +1,17 @@
+- shell:
+    command: "ls"
+    working_dir: "/tmp"
+
+- sort:
+    reverse: True
+
+
+# - rofi:
+#     mesg: "Hello you fuckwit"
+#     multi-select: True
+#     kb-accept-entry: "!Return"
+#     kb-default-action: "xxx"
+#     kb-custom:
+#       "copy": "Alt-9"
+#       "url": "Alt-2"
+#     prompt: "Test > "
