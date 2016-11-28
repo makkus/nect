@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import types
 import os.path
 import abc
 import six
@@ -31,15 +32,16 @@ def create_channel(channel_data):
 
     if isinstance(channel_data, collections.Sequence) and not isinstance(channel_data, str):
         result = channel_data
-    elif isinstance(channel_data, str):
+    elif isinstance(channel_data, str) or isinstance(channel_data, int):
         result = [channel_data]
     elif isinstance(channel_data, dict):
         result = []
         for k, v in channel_data.items():
             result.append((k, v))
-    elif isinstance(channel_data, type.GeneratorType):
+    elif isinstance(channel_data, types.GeneratorType):
         result = channel_data
-
+    else:
+        raise Exception("Can't create channel for {} (type: {})".format(channel_data, type(channel_data)))
     return result
 
 

@@ -1,0 +1,11 @@
+- dummy-list:
+    items: 20
+    pause: 100
+
+    format: int
+
+- sort:
+    reverse: True
+
+- index:
+    index: 0

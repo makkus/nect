@@ -2,6 +2,12 @@ from nect.nect import Nect
 from operator import itemgetter
 import pipes
 from subprocess import PIPE, Popen, check_output
+import time
+import random
+
+import logging
+log = logging.getLogger(__name__)
+
 
 class StaticList(Nect):
 
@@ -103,3 +109,29 @@ class ShellPipe(Nect):
             if not result_value:
                 raise Exception("could not find value key '{}' in: '{}'".format(value_key, result))
             return result_value
+
+class PositionListFilter(Nect):
+
+    def nect(self):
+        return self.get_channel()[self.get_config("index")]
+
+class DummyList(Nect):
+
+    def list_generator(self):
+
+        for i in range(1, self.get_config("items", 9)+1):
+
+            time.sleep(self.get_config("pause") / 1000)
+            log.debug("Sleeping for {} ms".format(self.get_config("pause") / 1000))
+
+            format = self.get_config("format", "int")
+
+            if format == "int":
+                item =  random.randint(1000, 9999)
+            elif format == "str":
+                item = "xxx"
+
+            yield item
+
+    def nect(self):
+        return self.list_generator()

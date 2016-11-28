@@ -7,26 +7,8 @@
 - sort:
    sort_key: 'title'
 
-# - dummy_list_creator:
-    # pause: 0
-    # items: 20
-    # format: "int"
-
 - shell-pipe:
     command: 'rofi -dmenu'
     display_key: 'title'
     value_key: 'value'
 
-# - shell:
-    # command: "ls **/*.gpg | sed 's/....$//'"
-    # working_dir: "/home/markus/.password-store"
-
-# - rofi:
-#     mesg: "Hello you fuckwit"
-#     multi-select: True
-#     kb-accept-entry: "!Return"
-#     kb-default-action: "xxx"
-#     kb-custom:
-#       "copy": "Alt-9"
-#       "url": "Alt-2"
-#     prompt: "Test > "

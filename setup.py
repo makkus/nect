@@ -41,7 +41,9 @@ setup(
             'static-list=nect.nects:StaticList',
             'sort=nect.nects:Sort',
             'shell-pipe=nect.nects:ShellPipe',
-            'shell=nect.nects:Shell'
+            'shell=nect.nects:Shell',
+            'dummy-list=nect.nects:DummyList',
+            'index=nect.nects:PositionListFilter'
         ]
 
     },
