@@ -30,6 +30,9 @@ Features
 
 * TODO
 
+- Figure out how to best do multiple input/output lists
+- add mechanisms for ignoring/forwarding/copying/merging input/output lists
+
 Credits
 ---------
 
