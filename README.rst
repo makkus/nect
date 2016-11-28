@@ -30,7 +30,7 @@ Install
 
 pyenv install 3.5.2
 
-virtualenv
+create virtualenv
 
 pip install -r requirements_dev.txt
 
