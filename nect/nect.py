@@ -77,8 +77,8 @@ class Nector(object):
         channels = {}
 
         execution_step = 0
-
         for nect in self.pipeline:
+
             # no config, only name
             if type(nect) is str:
                 nect_type = nect

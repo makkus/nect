@@ -32,7 +32,7 @@ class Sort(Nect):
 
         if self.get_config("sort_key"):
             # we assume channel is list of dicts
-            result = self.dict_sort_channel(self.get_config("sort_key"), self.get_channel(), reverse=self.get_config("reverse"))
+            result = self.dict_sort_channel(self.get_config("sort_key"), self.get_channel(), reverse=self.get_config("reverse", False))
         else:
             result = sorted(self.get_channel(), reverse=self.get_config("reverse"))
 

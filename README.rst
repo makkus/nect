@@ -34,7 +34,7 @@ create virtualenv
 
 pip install -r requirements_dev.txt
 
-python setup.py develop (as well for all external 'nects'
+python setup.py develop (as well for all external 'nects')
 
 run:
 
