@@ -25,6 +25,23 @@ workflow pipeline thing with lists
 * Documentation: https://nect.readthedocs.io.
 
 
+Install
+-------
+
+pyenv install 3.5.2
+
+virtualenv
+
+pip install -r requirements_dev.txt
+
+python setup.py develop (as well for all external 'nects'
+
+run:
+
+nect example[xxxx].yml
+
+
+
 Features
 --------
 
