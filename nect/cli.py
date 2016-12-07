@@ -3,7 +3,7 @@
 import click
 import logging
 import sys
-from nect.nect import Nector
+from nect import Nector
 
 @click.command()
 @click.option('--verbose', help='Verbose output, for debugging purposes', default=False, is_flag=True)

@@ -38,14 +38,15 @@ setup(
             'nect=nect.cli:main'
         ],
         'nect.nects': [
-            'static-list=nect.nects:StaticList',
-            'sort=nect.nects:Sort',
-            'shell-pipe=nect.nects:ShellPipe',
-            'shell=nect.nects:Shell',
-            'dummy-list=nect.nects:DummyList',
-            'index=nect.nects:PositionListFilter'
+            'static-list=nect.nects.core:StaticList',
+            'sort=nect.nects.core:Sort',
+            'shell-pipe=nect.nects.core:ShellPipe',
+            'shell=nect.nects.core:Shell',
+            'dummy-list=nect.nects.core:DummyList',
+            'index=nect.nects.core:PositionListFilter',
+            'executables=nect.nects.apps:Executables',
+            'dict=nect.nects.core:Dict'
         ]
-
     },
     include_package_data=True,
     install_requires=requirements,

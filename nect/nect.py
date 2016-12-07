@@ -8,6 +8,7 @@ import sys
 import yaml
 import collections
 
+
 from stevedore import extension
 
 import logging
@@ -147,6 +148,9 @@ class Nect(object):
             return config.get(config_key, default)
         else:
             return default
+
+    def get_available_channels(self):
+        return self.channels[self.current_execution_step].keys()
 
     def get_channel(self, channel_name="default"):
         return self.channels[self.current_execution_step].get(channel_name, None)

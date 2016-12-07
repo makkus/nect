@@ -1,4 +1,4 @@
-from nect.nect import Nect
+from nect import Nect
 from operator import itemgetter
 import pipes
 from subprocess import PIPE, Popen, check_output
@@ -135,3 +135,44 @@ class DummyList(Nect):
 
     def nect(self):
         return self.list_generator()
+
+
+class Dict(Nect):
+
+    def __init__(self):
+        super().__init__()
+        self.slots = {}
+
+    def nect(self):
+
+        slot_name = self.get_config("slot_name")
+        action = self.get_config("action")
+        filter_key = self.get_config("filter_key")
+
+        if "store" == action:
+
+            self.slots[slot_name] = self.get_channel()
+
+        if "pass" == action or "store" == action:
+
+            result = (item.get(filter_key) for item in self.get_channel() if item.get(filter_key, False))
+
+        elif "retrieve" == action:
+
+            retrieve_key = self.get_config("retrieve_key")
+
+            match_values = [item_inner.get(filter_key, None) for item_inner in self.get_channel()]
+
+            result = (item for item in self.get_channel() if item.get(filter_key, False) and item.get(filter_key, None) in (item_inner.get(filter_key, None) for item_inner in self.get_slot(slot_name) ))
+
+            print("SSS")
+            print(list(result))
+            for r in result:
+                print(r)
+
+        else:
+            raise Exception("Unsupported action {}".format(action))
+
+
+
+        return result
