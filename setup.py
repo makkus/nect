@@ -45,7 +45,10 @@ setup(
             'dummy-list=nect.nects.core:DummyList',
             'index=nect.nects.core:PositionListFilter',
             'executables=nect.nects.apps:Executables',
-            'dict=nect.nects.core:Dict'
+            'store=nect.nects.core:Store',
+            'dict-to-list=nect.nects.core:DictToList',
+            'list-to-dict=nect.nects.core:ListToDict',
+            'uniq=nect.nects.core:Uniq'
         ]
     },
     include_package_data=True,
