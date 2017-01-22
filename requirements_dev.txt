@@ -11,7 +11,7 @@ PyYAML==3.11
 pytest==2.9.2
 ipython==4.2.1
 readline
-pygments
+pygments==2.2.0
 
 
 
